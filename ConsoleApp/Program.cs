@@ -1,6 +1,4 @@
 ﻿using System;
-using Newtonsoft.Json;
-using System.Threading;
 
 namespace VSCode
 {
@@ -31,16 +29,6 @@ namespace VSCode
             }
 
             return new int[0];
-        }
-
-        private static void Foo()
-        {
-            Console.WriteLine("hello world");
-        }
-
-        private static void Bar()
-        {
-            Console.WriteLine("Bar");
         }
     }
 }
