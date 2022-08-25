@@ -35,10 +35,5 @@ namespace VSCode
 
             return new int[0];
         }
-
-        public int Foo()
-        {
-            return 1;
-        }
     }
 }
