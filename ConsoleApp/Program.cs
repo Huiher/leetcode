@@ -32,5 +32,10 @@ namespace VSCode
 
             return new int[0];
         }
+
+        private static void Foo()
+        {
+            Console.WriteLine("hello world");
+        }
     }
 }
