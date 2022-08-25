@@ -25,9 +25,6 @@ namespace VSCode
                 {
                     if (nums[i] + nums[j] == target)
                     {
-                        Console.WriteLine(i);
-                        Console.WriteLine(j);
-
                         return new int[2]{i, j};
                     }
                 }
