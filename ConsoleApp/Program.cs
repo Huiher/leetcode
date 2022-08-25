@@ -37,5 +37,10 @@ namespace VSCode
         {
             Console.WriteLine("hello world");
         }
+
+        private static void Bar()
+        {
+            Console.WriteLine("Bar");
+        }
     }
 }
