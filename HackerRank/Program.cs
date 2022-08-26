@@ -5,15 +5,28 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            var filePath = @"D:\Git\leetcode\HackerRank\s2.txt";
-
             // Console.WriteLine(Substring.MaxLength("abcabcddd"));
-            Console.WriteLine(Substring.MaxLength(ReadFileAsText(filePath)));
-        }
+            // var filePath = @"D:\Git\leetcode\HackerRank\s1.txt";
+            // Console.WriteLine(Substring.MaxLength(FileReaderHelper.ReadFileAsText(filePath)));
 
-        static string ReadFileAsText(string path)
-        {
-            return File.ReadAllText(path);
+            var orderList = new List<List<int>>{
+                new List<int>{5},
+                new List<int>{8,1},
+                new List<int>{4,2},
+                new List<int>{5,6},
+                new List<int>{3,1},
+                new List<int>{4,3},
+            };
+
+            // var orderList = new List<List<int>>{
+            //     new List<int>{3},
+            //     new List<int>{1,3},
+            //     new List<int>{2,3},
+            //     new List<int>{3,3}
+            // };
+
+            var deliveryList = JimOrder.JimOrders(orderList);
+            Console.WriteLine(string.Join(' ', deliveryList));
         }
     }
 }
