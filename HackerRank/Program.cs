@@ -43,8 +43,14 @@ namespace HackerRank
             // var totalCost = CuttingBoardCost.minimumCostOfBreaking(costY, costX);
             // Console.WriteLine($"Total cost is {totalCost}");
 
-            var timeTaken = BuyShowTicket.CalculateQueueTime(new List<int>{5, 5, 2, 3}, 3);
-            Console.WriteLine($"Time taken to get the ticket: {timeTaken}");
+            // var timeTaken = BuyShowTicket.CalculateQueueTime(new List<int>{5, 5, 2, 3}, 3);
+            // Console.WriteLine($"Time taken to get the ticket: {timeTaken}");
+
+            var ranked = new List<int>{ 100 ,90, 90, 80, 75, 60};
+            var players = new List<int>{ 50, 65, 77, 90, 102};
+
+            var result = DenseRanking.CalculateLeaderBoard(ranked, players);
+            Console.WriteLine(string.Join(",", result));
         }
     }
 }
