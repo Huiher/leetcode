@@ -30,7 +30,7 @@ namespace HackerRank
 
             Console.WriteLine("************************");
             Console.WriteLine();
-            Console.WriteLine("Queue time calculation");
+            Console.WriteLine("Queue using 2 stacks");
             Console.WriteLine();
             Console.WriteLine("************************");
 
@@ -46,11 +46,24 @@ namespace HackerRank
             // var timeTaken = BuyShowTicket.CalculateQueueTime(new List<int>{5, 5, 2, 3}, 3);
             // Console.WriteLine($"Time taken to get the ticket: {timeTaken}");
 
-            var ranked = new List<int>{ 100 ,90, 90, 80, 75, 60};
-            var players = new List<int>{ 50, 65, 77, 90, 102};
+            // var ranked = new List<int>{ 100 ,90, 90, 80, 75, 60};
+            // var players = new List<int>{ 50, 65, 77, 90, 102};
 
-            var result = DenseRanking.CalculateLeaderBoard(ranked, players);
-            Console.WriteLine(string.Join(",", result));
+            // var result = DenseRanking.CalculateLeaderBoard(ranked, players);
+            // Console.WriteLine(string.Join(",", result));
+
+            var queue = new StackQueue();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+
+            Console.WriteLine(queue.Dequeue());
+            
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
         }
     }
 }
