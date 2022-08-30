@@ -5,103 +5,29 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            // Console.WriteLine(Substring.MaxLength("abcabcddd"));
-            // var filePath = @"D:\Git\leetcode\HackerRank\s1.txt";
-            // Console.WriteLine(Substring.MaxLength(FileReaderHelper.ReadFileAsText(filePath)));
-
-            // var orderList = new List<List<int>>{
-            //     new List<int>{5},
-            //     new List<int>{8,1},
-            //     new List<int>{4,2},
-            //     new List<int>{5,6},
-            //     new List<int>{3,1},
-            //     new List<int>{4,3},
-            // };
-
-            // var deliveryList = JimOrder.JimOrders(orderList);
-            // Console.WriteLine(string.Join(' ', deliveryList));
-
-            // var aList = new List<int>{1, 2, 2, 1};
-            // var bList = new List<int>{3, 3, 3, 4};
-
-            // var result = PermuteTwoArrays.Permute(5, aList, bList);
-            // Console.WriteLine(string.Join(' ', aList));
-            // Console.WriteLine(result);
-
             Console.WriteLine("************************");
             Console.WriteLine();
-            Console.WriteLine("Array with differences");
+            Console.WriteLine("BFS vs. DFS");
             Console.WriteLine();
             Console.WriteLine("************************");
 
-            // var costY = new List<int>{2,1,3,1,4};
-            // var costX = new List<int>{4,1,2};
+            Graph graph = new Graph(4);
 
-            // var costY = new List<int>{7, 69, 87, 54, 1, 27, 92, 58, 24, 86, 16, 18, 14, 68, 65, 24, 37, 66, 78, 14, 27, 72, 23, 65, 9, 43, 45, 3, 7, 59, 33, 66, 28, 20, 20, 29, 99, 12, 39, 23, 51, 55, 94, 17, 23, 11, 93, 60, 77, 72, 26, 57, 96, 2, 22, 58, 45, 68, 61, 4, 27, 47};
-            // var costX = new List<int>{70, 7, 19, 42, 36, 19, 7, 27, 94, 58, 82, 40, 27, 57, 51, 21, 69, 81, 93, 96, 38, 41, 50, 60, 99, 47, 28, 61, 52, 7, 60};
+            graph.AddEdge(0,1);
+            graph.AddEdge(0, 2);
+            graph.AddEdge(1,2);
+            graph.AddEdge(2,0);
+            graph.AddEdge(2,3);
+            graph.AddEdge(3,3);
 
-            // var totalCost = CuttingBoardCost.minimumCostOfBreaking(costY, costX);
-            // Console.WriteLine($"Total cost is {totalCost}");
-
-            // var timeTaken = BuyShowTicket.CalculateQueueTime(new List<int>{5, 5, 2, 3}, 3);
-            // Console.WriteLine($"Time taken to get the ticket: {timeTaken}");
-
-            // var ranked = new List<int>{ 100 ,90, 90, 80, 75, 60};
-            // var players = new List<int>{ 50, 65, 77, 90, 102};
-
-            // var result = DenseRanking.CalculateLeaderBoard(ranked, players);
-            // Console.WriteLine(string.Join(",", result));
-
-            // var queue = new StackQueue();
-            // queue.Enqueue(1);
-            // queue.Enqueue(2);
-
-            // Console.WriteLine(queue.Dequeue());
-            
-            // queue.Enqueue(3);
-            // queue.Enqueue(4);
-            
-            // Console.WriteLine(queue.Dequeue());
-            // Console.WriteLine(queue.Dequeue());
-            // Console.WriteLine(queue.Dequeue());
-
-            // BinaryTree binaryTree = new BinaryTree();
+            //Print adjacency matrix
+            graph.PrintAdjacecnyMatrix();
  
-            // binaryTree.Add(1);
-            // binaryTree.Add(2);
-            // binaryTree.Add(7);
-            // binaryTree.Add(3);
-            // binaryTree.Add(10);
-            // binaryTree.Add(5);
-            // binaryTree.Add(8);
-            
-            // Node node = binaryTree.Find(5);
-            // int depth = binaryTree.GetTreeDepth();
-            
-            // Console.WriteLine("PreOrder Traversal:");
-            // binaryTree.TraversePreOrder(binaryTree.Root);
-            // Console.WriteLine();
-            
-            // Console.WriteLine("InOrder Traversal:");
-            // binaryTree.TraverseInOrder(binaryTree.Root);
-            // Console.WriteLine();
-            
-            // Console.WriteLine("PostOrder Traversal:");
-            // binaryTree.TraversePostOrder(binaryTree.Root);
-            // Console.WriteLine();
-            
-            // binaryTree.Remove(7);
-            // binaryTree.Remove(8);
-            
-            // Console.WriteLine("PreOrder Traversal After Removing Operation:");
-            // binaryTree.TraversePreOrder(binaryTree.Root);
-            // Console.WriteLine();
-            
-            // Console.ReadLine();
+            Console.WriteLine("BFS traversal starting from vertex 2:");
+            graph.BFS(2);
 
-            var arr = new List<int>{1, 5, 3, 4, 2};
-            var count = ArrayForDifference.CheckCountForDiffernece(arr, 2);
-            Console.WriteLine($"Difference count is: {count}");
+            Console.WriteLine("DFS traversal starting from vertex 2:");
+            graph.DFS(2);
         }
     }
 }
