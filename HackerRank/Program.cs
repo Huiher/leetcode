@@ -30,7 +30,7 @@ namespace HackerRank
 
             Console.WriteLine("************************");
             Console.WriteLine();
-            Console.WriteLine("Queue using 2 stacks");
+            Console.WriteLine("Binary tree implementation");
             Console.WriteLine();
             Console.WriteLine("************************");
 
@@ -52,18 +52,52 @@ namespace HackerRank
             // var result = DenseRanking.CalculateLeaderBoard(ranked, players);
             // Console.WriteLine(string.Join(",", result));
 
-            var queue = new StackQueue();
-            queue.Enqueue(1);
-            queue.Enqueue(2);
+            // var queue = new StackQueue();
+            // queue.Enqueue(1);
+            // queue.Enqueue(2);
 
-            Console.WriteLine(queue.Dequeue());
+            // Console.WriteLine(queue.Dequeue());
             
-            queue.Enqueue(3);
-            queue.Enqueue(4);
+            // queue.Enqueue(3);
+            // queue.Enqueue(4);
             
-            Console.WriteLine(queue.Dequeue());
-            Console.WriteLine(queue.Dequeue());
-            Console.WriteLine(queue.Dequeue());
+            // Console.WriteLine(queue.Dequeue());
+            // Console.WriteLine(queue.Dequeue());
+            // Console.WriteLine(queue.Dequeue());
+
+            BinaryTree binaryTree = new BinaryTree();
+ 
+            binaryTree.Add(1);
+            binaryTree.Add(2);
+            binaryTree.Add(7);
+            binaryTree.Add(3);
+            binaryTree.Add(10);
+            binaryTree.Add(5);
+            binaryTree.Add(8);
+            
+            Node node = binaryTree.Find(5);
+            int depth = binaryTree.GetTreeDepth();
+            
+            Console.WriteLine("PreOrder Traversal:");
+            binaryTree.TraversePreOrder(binaryTree.Root);
+            Console.WriteLine();
+            
+            Console.WriteLine("InOrder Traversal:");
+            binaryTree.TraverseInOrder(binaryTree.Root);
+            Console.WriteLine();
+            
+            Console.WriteLine("PostOrder Traversal:");
+            binaryTree.TraversePostOrder(binaryTree.Root);
+            Console.WriteLine();
+            
+            binaryTree.Remove(7);
+            binaryTree.Remove(8);
+            
+            Console.WriteLine("PreOrder Traversal After Removing Operation:");
+            binaryTree.TraversePreOrder(binaryTree.Root);
+            Console.WriteLine();
+            
+            Console.ReadLine();
         }
     }
 }
