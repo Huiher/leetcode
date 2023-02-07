@@ -1,6 +1,6 @@
 namespace HackerRank
 {
-    public class ShiftArray
+    public class ArrayRelated
     {
         public static int[] Shift(int[] array, int k)
         {
@@ -29,6 +29,29 @@ namespace HackerRank
             }
 
             return final;
+        }
+
+        public static int FindUnpairedElement(int[] elements)
+        {
+            if (elements.Length == 1)
+            {
+                return elements[0];
+            }
+
+            var dict = new Dictionary<int, int>();
+            foreach(var i in elements)
+            {
+                if (dict.ContainsKey(i))
+                {
+                    dict[i] = dict[i]+1;
+                }
+                else
+                {
+                    dict.Add(i, 1);
+                }
+            }
+            
+            return dict.FirstOrDefault(x => x.Value == 1).Key;
         }
     }
 }

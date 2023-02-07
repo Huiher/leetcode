@@ -6,7 +6,7 @@ namespace HackerRank
         static void Main(string[] args)
         {
             int[] array = new int[]{1,2,3,4};
-            var shifted = ShiftArray.Shift(array, 5);
+            var shifted = ArrayRelated.Shift(array, 5);
             foreach(var i in shifted)
             {
                 Console.Write($"{i},");
