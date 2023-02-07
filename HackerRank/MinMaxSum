@@ -1,0 +1,22 @@
+namespace HackerRank
+{
+    public static class MinMaxSum
+    {
+        public static void Sum(List<int> arr)
+            {
+                if (arr.Count == 0)
+                {
+                    Console.WriteLine("0 0");
+                }
+                
+                var sortedArray = arr.OrderBy(x => x).ToList();
+                
+                var smallest = sortedArray.Take(4);
+                var biggest = sortedArray.TakeLast(4);
+                
+                long smallestTotal = smallest.Sum();
+                long biggestTotal = biggest.Sum();
+                Console.WriteLine($"{smallestTotal} {biggestTotal}");
+            }
+    }
+}
